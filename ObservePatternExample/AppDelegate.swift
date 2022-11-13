@@ -1,8 +1,5 @@
 //
 //  AppDelegate.swift
-//  ObservePatternExample
-//
-//  Created by 曾問 on 2022/11/13.
 //
 
 import UIKit
