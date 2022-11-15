@@ -6,12 +6,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     private var searchBar: SearchBarView = .init()
-    private var dataList: ListView = .init()
+    private var listView: ListView = .init()
+    private var tipView: TipView = .init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        bindView()
     }
 }
 
@@ -28,13 +30,32 @@ extension MainViewController {
             searchBar.heightAnchor.constraint(equalToConstant: 60)
         ])
 
-        dataList.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(dataList)
+        tipView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tipView)
         NSLayoutConstraint.activate([
-            dataList.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dataList.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dataList.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
-            dataList.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tipView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tipView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tipView.topAnchor.constraint(equalTo: searchBar.bottomAnchor)
         ])
+
+        listView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(listView)
+        NSLayoutConstraint.activate([
+            listView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            listView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            listView.topAnchor.constraint(equalTo: tipView.bottomAnchor),
+            listView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
+    private func bindView() {
+        searchBar.delegate = self
+    }
+}
+
+extension MainViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tipView.updateSearchText(text: searchText)
+        listView.filterWith(text: searchText)
     }
 }

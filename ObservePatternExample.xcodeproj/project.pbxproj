@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71A3E07529225733002C752E /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3E07429225733002C752E /* TipView.swift */; };
 		71E71DF22921162000D1E272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E71DF12921162000D1E272 /* AppDelegate.swift */; };
 		71E71DF42921162000D1E272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E71DF32921162000D1E272 /* SceneDelegate.swift */; };
 		71E71DF62921162000D1E272 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E71DF52921162000D1E272 /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71A3E07429225733002C752E /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		71E71DEE2921162000D1E272 /* ObservePatternExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObservePatternExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E71DF12921162000D1E272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71E71DF32921162000D1E272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				71E71E0729212F5E00D1E272 /* ListView.swift */,
 				71E71E0629212F5E00D1E272 /* SearchView.swift */,
 				71E71DF52921162000D1E272 /* MainViewController.swift */,
+				71A3E07429225733002C752E /* TipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				71E71E0829212F5E00D1E272 /* SearchView.swift in Sources */,
 				71E71DF62921162000D1E272 /* MainViewController.swift in Sources */,
+				71A3E07529225733002C752E /* TipView.swift in Sources */,
 				71E71E0929212F5E00D1E272 /* ListView.swift in Sources */,
 				71E71DF22921162000D1E272 /* AppDelegate.swift in Sources */,
 				71E71DF42921162000D1E272 /* SceneDelegate.swift in Sources */,
