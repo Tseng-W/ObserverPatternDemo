@@ -18,9 +18,9 @@ class TipView: UIView {
     }
 }
 
-extension TipView {
-    func updateSearchText(text: String) {
-        searchTextLabel.text = text.isEmpty ? "" : "Searching with \(text)"
+extension TipView: Subscribable {
+    func update(_ value: String) {
+        searchTextLabel.text = value.isEmpty ? "" : "Searching with \(value)"
     }
 }
 

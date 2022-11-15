@@ -49,13 +49,7 @@ extension MainViewController {
     }
 
     private func bindView() {
-        searchBar.delegate = self
-    }
-}
-
-extension MainViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        tipView.updateSearchText(text: searchText)
-        listView.filterWith(text: searchText)
+        searchBar.subscribe(subscriber: listView)
+        searchBar.subscribe(subscriber: tipView)
     }
 }

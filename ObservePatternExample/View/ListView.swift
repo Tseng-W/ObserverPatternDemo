@@ -43,18 +43,6 @@ class ListView: UICollectionView {
     }
 }
 
-// MARK: Public functions.
-extension ListView {
-    func filterWith(text: String) {
-        guard text.isEmpty == false else {
-            applySnapShot(data: data)
-            return
-        }
-        let filterData = data.filter({ $0.lowercased().contains(text.lowercased()) })
-        applySnapShot(data: filterData)
-    }
-}
-
 // MARK: Private functions.
 extension ListView {
     private func configureDataSource() {
@@ -75,6 +63,17 @@ extension ListView {
         snapShot.appendItems(data)
 
         diffableDataSource?.apply(snapShot)
+    }
+}
+
+extension ListView: Subscribable {
+    func update(_ value: String) {
+        guard value.isEmpty == false else {
+            applySnapShot(data: data)
+            return
+        }
+        let filterData = data.filter({ $0.lowercased().contains(value.lowercased()) })
+        applySnapShot(data: filterData)
     }
 }
 
